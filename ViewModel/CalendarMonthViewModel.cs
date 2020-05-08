@@ -35,7 +35,7 @@ namespace CalendarApp.ViewModel
 			get => currentMonth; 
 			set 
 			{ 
-				currentMonth = SetCorrectNumberOfMonth(value);
+				currentMonth = GetCorrectNumberOfMonth(value);
 				CurrentMonthName = Constants.MonthNames[currentMonth - Constants.OneMonth];
 				NotifyPropertyChanged("CurrentMonth");
 			}
@@ -106,9 +106,9 @@ namespace CalendarApp.ViewModel
 			DateTime firstDayOfDateTimes = daysOfCalendarMonth[Constants.FirstElement];
 			int numberOfDayOfWeek = (int)firstDayOfDateTimes.DayOfWeek;
 			int yearOfCalendarMonth = calendarMonthModel.YearOfMonth;
-			int lastMonth = SetCorrectNumberOfMonth(calendarMonthModel.MonthNumber - Constants.OneMonth);
+			int lastMonth = GetCorrectNumberOfMonth(calendarMonthModel.MonthNumber - Constants.OneMonth);
 			int numberOfDayInLastMonth = DateTime.DaysInMonth(yearOfCalendarMonth, lastMonth);
-			int numberOfMissingDays = SetNumberOfMissingDays(numberOfDayOfWeek);
+			int numberOfMissingDays = GetNumberOfMissingDays(numberOfDayOfWeek);
 			DateTime dayToAdd;
 			int numberOfDayToAdd;
 
@@ -121,7 +121,7 @@ namespace CalendarApp.ViewModel
 			return daysOfCalendarMonth;
 		}
 
-		private int SetNumberOfMissingDays(int numberOfDayOfWeek)
+		private int GetNumberOfMissingDays(int numberOfDayOfWeek)
 		{
 			if (numberOfDayOfWeek < (int)DayOfWeek.Monday)
 			{
@@ -129,7 +129,7 @@ namespace CalendarApp.ViewModel
 			}
 			return numberOfDayOfWeek - 1;
 		}
-		private int SetCorrectNumberOfMonth(int numberOfMonth)
+		private int GetCorrectNumberOfMonth(int numberOfMonth)
 		{
 			int monthNumber = numberOfMonth % Constants.NumberOfMonthsInAYear;
 			if (monthNumber == 0)
@@ -148,7 +148,7 @@ namespace CalendarApp.ViewModel
 		}
 		private void OnGoToNextMonth()
 		{
-			int nextMonth = SetCorrectNumberOfMonth(CurrentMonth + Constants.OneMonth);
+			int nextMonth = GetCorrectNumberOfMonth(CurrentMonth + Constants.OneMonth);
 
 			int yearOfNextMonth = CurrentYear;
 			if (nextMonth == Constants.January)
@@ -166,7 +166,7 @@ namespace CalendarApp.ViewModel
 		}
 		private void OnGoToLastMonth()
 		{
-			int lastMonth = SetCorrectNumberOfMonth(CurrentMonth - Constants.OneMonth);
+			int lastMonth = GetCorrectNumberOfMonth(CurrentMonth - Constants.OneMonth);
 			int yearOfLastMonth = CurrentYear;
 			if (lastMonth == Constants.December)
 			{
@@ -181,9 +181,11 @@ namespace CalendarApp.ViewModel
 		{
 			PropertyChangedEventHandler handler = PropertyChanged;
 			if (null != handler)
-			{
-				handler(this, new PropertyChangedEventArgs(propertyName));
-			}
+				PropertyChangedDelegate(propertyName, handler);
+		}
+		private void PropertyChangedDelegate(string propertyName, PropertyChangedEventHandler handler)
+		{
+			handler(this, new PropertyChangedEventArgs(propertyName));
 		}
 
 	}

@@ -8,13 +8,23 @@ namespace CalendarApp.Model
 {
 	class EventModel
 	{
-		private DateTime dateOfEvent;
+		private DateTime startDateAndTime;
+		private DateTime finishDateAndTime;
+		private string title;
+		private string description;
 
-		public EventModel()
+		public EventModel(string title, DateTime start, DateTime finish, string description)
 		{
+			Title = title;
+			StartDateAndTime = start;
+			FinishDateAndTime = finish;
+			Description = description;
 
 		}
 
-		public DateTime DateOfEvent { get => dateOfEvent; set => dateOfEvent = value; }
+		public DateTime StartDateAndTime { get => startDateAndTime; set => startDateAndTime = value; }
+		public DateTime FinishDateAndTime { get => finishDateAndTime; set => finishDateAndTime = value; }
+		public string Title { get => title; set => title = value; }
+		public string Description { get => description; set => description = value; }
 	}
 }

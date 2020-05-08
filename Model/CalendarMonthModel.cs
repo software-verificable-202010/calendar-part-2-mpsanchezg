@@ -26,7 +26,7 @@ namespace CalendarApp.Model
 			set 
 			{ 
 				monthNumber = value;
-				daysOfMonth = SetDaysOfTheMonth(monthNumber, yearOfMonth);
+				daysOfMonth = SetDaysOfTheMonth(MonthNumber, YearOfMonth);
 			}
 		}
 

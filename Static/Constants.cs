@@ -12,6 +12,7 @@ namespace CalendarApp.Model
 		public static readonly int FirstElement = 0;
 		public static readonly int StartDayNumber = 0;
 		public static readonly int NumberOfMonthsInAYear = 12;
+		public static readonly int OneDay = 1;
 		public static readonly int OneMonth = 1;
 		public static readonly int OneYear = 1;
 		public static readonly int January = 1;
@@ -31,5 +32,6 @@ namespace CalendarApp.Model
 			"Noviembre",
 			"Diciembre"
 		};
+		public static readonly int Thursday = 4;
 	}
 }
