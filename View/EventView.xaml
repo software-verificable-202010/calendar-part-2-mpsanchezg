@@ -33,7 +33,7 @@
             <TextBox x:Name="titleTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Title, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
             <Button
                 Content="Agregar"
-                Command="{Binding}" Grid.ColumnSpan="2" Margin="60,73,164.8,-73" Grid.Row="3"
+                Command="{Binding CreateEventCommand}" Grid.ColumnSpan="2" Margin="60,73,164.8,-73" Grid.Row="3"
                 />
         </Grid>
 

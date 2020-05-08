@@ -115,3 +115,5 @@ D:\Universidad\Universidad\Anos\Sexto_Ano\Diseño de Software Verificable\Projec
 D:\Universidad\Universidad\Anos\Sexto_Ano\Diseño de Software Verificable\Project\CalendarApp\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 D:\Universidad\Universidad\Anos\Sexto_Ano\Diseño de Software Verificable\Project\CalendarApp\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\Universidad\Universidad\Anos\Sexto_Ano\Diseño de Software Verificable\Project\CalendarApp\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\Universidad\Universidad\Anos\Sexto_Ano\Diseño de Software Verificable\Project\CalendarApp\bin\Debug\Microsoft.EntityFrameworkCore.Design.dll
+D:\Universidad\Universidad\Anos\Sexto_Ano\Diseño de Software Verificable\Project\CalendarApp\bin\Debug\Microsoft.EntityFrameworkCore.Design.xml
